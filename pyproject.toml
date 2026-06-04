@@ -1,0 +1,50 @@
+[build-system]
+requires = ["flit_core >=3.12,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "shakespy"
+authors = [
+    {name = "ShakesPy contributors"},
+]
+dynamic = ["version", "description"]
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+keywords = [
+    "shakespeare",
+    "translator",
+    "nlp",
+    "spacy",
+    "cli",
+    "early-modern-english",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    "spacy>=3.7",
+]
+
+[project.scripts]
+shakespy = "shakespy.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "numpy>=1.24",
+    "pytest>=7.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
